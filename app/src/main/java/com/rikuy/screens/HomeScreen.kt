@@ -38,31 +38,6 @@ fun CustomButtonNavigation() {
             .height(80.dp)
             .padding(horizontal = 40.dp)
     ) {
-        // Lista de pantallas a las que se puede navegar
-        val screens = listOf(Screen.Search, Screen.Add, Screen.Location, Screen.Profile)
-
-        // Lista de íconos correspondientes a cada pantalla
-        val icons = listOf(Icons.Filled.Search, Icons.Filled.AddCircle, Icons.Filled.LocationOn, Icons.Filled.Person)
-
-        // Crear un botón para cada pantalla con el ícono correspondiente
-        icons.forEachIndexed { index, image ->
-            IconButton(
-                onClick = {
-                    // Navegar a la pantalla seleccionada usando su ruta
-                    navController.navigate(screens[index].route) {
-                        // Evitar volver a la misma pantalla si ya estamos en ella
-                        launchSingleTop = true
-                    }
-                }
-            ) {
-                Icon(
-                    imageVector = image,
-                    contentDescription = null, // Descripción del ícono (puedes agregar texto si es necesario para accesibilidad)
-                    tint = Color.Black,
-                    modifier = Modifier.size(24.dp) // Tamaño del ícono
-                )
-            }
-        }
     }
 }
 
